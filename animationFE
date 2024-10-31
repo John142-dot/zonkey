@@ -1,0 +1,121 @@
+--> Opensourced lel <--
+repeat
+    wait()
+until game:IsLoaded()
+local OrionLib = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local plr = game.Players.LocalPlayer
+local Window = OrionLib:MakeWindow({
+    Name = "Animation Packs",
+    HidePremium = false,
+})
+
+if not plr.Character or not plr.Character:FindFirstChild("Animate") then
+    warn("Character or Animate object not found.")
+    return
+end
+
+local Animate = plr.Character.Animate
+local AnimationTab = Window:MakeTab({
+    Name = "Animations",
+    Icon = "rbxassetid://4483345998",
+    Premium = false,
+})
+
+local function ApplyStylizedFemaleAnimations()
+    Animate.Disabled = true
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=4708191566"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=4708192150"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=4708193840"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=4708192705"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616161997"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616156119"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616157476"
+    Animate.Disabled = false
+    OrionLib:MakeNotification({
+        Name = "Stylized Female Animations Applied",
+        Content = "Stylized Female animations have been applied!",
+        Duration = 5,
+    })
+end
+
+local function ApplyFEZombieAnimations()
+    Animate.Disabled = true
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=6106450203"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=6106450496"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=6106450663"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=6106450848"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=6106451051"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=6106451236"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=6106451422"
+    Animate.Disabled = false
+    OrionLib:MakeNotification({
+        Name = "FE Zombie Animations Applied",
+        Content = "FE Zombie animations have been applied!",
+        Duration = 5,
+    })
+end
+
+local function ApplyNoBoundariesAnimations()
+    Animate.Disabled = true
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=6106515811"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=6106516293"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=6106516924"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=6106517472"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=6106517958"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=6106518464"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=6106518903"
+    Animate.Disabled = false
+    OrionLib:MakeNotification({
+        Name = "No Boundaries Animations Applied",
+        Content = "No Boundaries animations have been applied!",
+        Duration = 5,
+    })
+end
+
+local function ApplySneakyAnimations()
+    Animate.Disabled = true
+    Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=616005836"
+    Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=616005915"
+    Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616005993"
+    Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616006068"
+    Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=616006140"
+    Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=616006223"
+    Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=616006302"
+    Animate.Disabled = false
+    OrionLib:MakeNotification({
+        Name = "Sneaky Animations Applied",
+        Content = "Sneaky animations have been applied!",
+        Duration = 5,
+    })
+end
+
+AnimationTab:AddButton({
+    Name = "Apply Stylized Female Animations",
+    Callback = function()
+        ApplyStylizedFemaleAnimations()
+    end,
+})
+
+AnimationTab:AddButton({
+    Name = "Apply FE Zombie Animations",
+    Callback = function()
+        ApplyFEZombieAnimations()
+    end,
+})
+
+AnimationTab:AddButton({
+    Name = "Apply No Boundaries Animations",
+    Callback = function()
+        ApplyNoBoundariesAnimations()
+    end,
+})
+
+AnimationTab:AddButton({
+    Name = "Apply Sneaky Animations",
+    Callback = function()
+        ApplySneakyAnimations()
+    end,
+})
+
+OrionLib:Init()
+Window:Show()
